@@ -1,0 +1,124 @@
+{
+	"_version": "1.17.0",
+	"sap.app": {
+		"id": "be.rpan.nested.comps",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"dataSources": {}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		}
+	},
+	"sap.ui5": {
+		"rootView": {
+			"viewName": "be.rpan.nested.comps.view.App",
+			"type": "XML",
+			"async": true,
+			"id": "app"
+		},
+		"componentUsages": {
+			"suppliersComponent": {
+				"name": "be.rpan.epm.suppliers",
+				"settings": {},
+				"componentData": {},
+				"lazy": true
+			},
+			"productsComponent": {
+				"name": "be.rpan.epm.products",
+				"settings": {},
+				"componentData": {},
+				"lazy": true
+			}
+		},
+		"dependencies": {
+			"minUI5Version": "1.72",
+			"libs": {
+				"sap.m": {}
+			}
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "be.rpan.nested.comps.i18n.i18n"
+				}
+			}
+		},
+		"resources": {
+			"css": [],
+			"js": []
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"path": "be.rpan.nested.comps.view",
+				"controlId": "app",
+				"controlAggregation": "pages",
+				"transition": "slide",
+				"bypassed": {
+					"target": "notFound"
+				},
+				"async": true
+			},
+			"routes": [
+				{
+					"name": "home",
+					"pattern": "",
+					"target": "home"
+				},
+				{
+					"name": "suppliers",
+					"pattern": "suppliers",
+					"target": {
+						"name": "suppliers",
+						"prefix": "s"
+					}
+				},
+				{
+					"name": "products",
+					"pattern": "products",
+					"target": {
+						"name": "products",
+						"prefix": "p"
+					}
+				}
+			],
+			"targets": {
+				"home": {
+					"type": "View",
+					"id": "home",
+					"name": "Home",
+					"title": "Home"
+				},
+				"suppliers": {
+					"type": "Component",
+					"usage": "suppliersComponent",
+					"title": "Supplier"
+				},
+				"products": {
+					"type": "Component",
+					"usage": "productsComponent",
+					"title": "Product"
+
+				},
+				"notFound": {
+					"type": "View",
+					"id": "notFound",
+					"name": "NotFound",
+					"transition": "show"
+				}
+			}
+		}
+	}
+}

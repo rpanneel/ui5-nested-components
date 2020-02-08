@@ -1,0 +1,52 @@
+<mvc:View controllerName="be.rpan.nested.comps.controller.Home"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	displayBlock="true">
+	<Page id="page"
+		showHeader="false"
+		enableScrolling="true">
+		<Table id="table" inset="false" busyIndicatorDelay="0">
+			<headerToolbar>
+				<OverflowToolbar>
+					<content>
+						<Title text="{i18n>homePageTitle}"
+							level="H2" />
+						<ToolbarSpacer />
+					</content>
+				</OverflowToolbar>
+			</headerToolbar>
+			<columns>
+				<Column width="12em">
+					<Text text="Action" />
+				</Column>
+				<Column>
+					<Text text="Description" />
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem
+					type="Active"
+					press="onPressItem">
+					<cells>
+						<ObjectIdentifier
+							title="Products"
+							text="Display Products" />
+						<Text
+							text="Open the Products Reusable Component" />
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem
+					type="Active"
+					press="onPressItem">
+					<cells>
+						<ObjectIdentifier
+							title="Suppliers"
+							text="Display Suppliers" />
+						<Text
+							text="Open the Suppliers Reusable Component" />
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+	</Page>
+</mvc:View>

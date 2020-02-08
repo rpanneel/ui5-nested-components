@@ -1,0 +1,38 @@
+{
+  "name": "ui5-nested-components",
+  "version": "1.0.0",
+  "description": "Nested components demo",
+  "author": "Robin Panneels",
+  "license": "MIT",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:webapp": "ui5 serve",
+    "start:dist": "serve dist",
+    "lint": "eslint webapp",
+    "lint:fix": "eslint webapp --fix",
+    "build": "rimraf dist && ui5 build -a",
+    "sapbuild": "rimraf dist && ui5 build"
+  },
+  "devDependencies": {
+    "@ui5/cli": "1.12.1",
+    "dotenv": "^8.2.0",
+    "eslint": "6.7.2",
+    "eslint-config-rpanneel": "0.0.1",
+    "rimraf": "3.0.0",
+    "serve": "11.2.0",
+    "ui5-middleware-livereload": "^0.1.4",
+    "ui5-middleware-proxy-basicauth": "^0.0.6",
+    "ui5-middleware-servestatic": "^0.1.2",
+    "ui5-task-nwabap-deployer": "^1.0.5",
+    "ui5-products": "git+https://github.com/rpanneel/ui5-products.git",
+    "ui5-suppliers": "git+https://github.com/rpanneel/ui5-suppliers.git"
+  },
+  "ui5": {
+    "dependencies": [
+      "ui5-middleware-servestatic",
+      "ui5-middleware-livereload",
+      "ui5-middleware-proxy-basicauth",
+      "ui5-task-nwabap-deployer"
+    ]
+  }
+}
