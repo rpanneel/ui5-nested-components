@@ -14,7 +14,7 @@ sap.ui.define(
 				.attachBypassed(this._onBypassed, this);
 		};
 
-		AppController.prototype_onBypassed = function(oEvent) {
+		AppController.prototype._onBypassed = function(oEvent) {
 			var sHash = oEvent.getParameter("hash");
 			Log.info(this.getView().getControllerName(), "_onBypassed Hash=" + sHash);
 		};

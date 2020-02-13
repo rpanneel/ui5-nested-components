@@ -14,7 +14,7 @@ sap.ui.define(
 				.attachBypassed(this._onBypassed, this);
 		};
 
-		HomeController.prototype_onBypassed = function(event) {
+		HomeController.prototype._onBypassed = function(event) {
 			var hash = event.getParameter("hash");
 			Log.info(this.getView().getControllerName(), "_onBypassed Hash=" + hash);
 		};
